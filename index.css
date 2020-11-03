@@ -1,0 +1,211 @@
+:root{
+    font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: grid;
+    grid-template-rows: 1fr;
+    background-color: #333131;
+    height: 14vh;
+}
+
+
+.navbar_title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 4vw;
+    color: #ffffff;
+    font-size: 2.5em;
+}
+
+main {
+    margin: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.bank-account {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+}
+
+.bank-account_title {
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    justify-self: left;
+}
+
+.bank-account_balance {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+}
+
+.loan-button {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    width: 90%;
+    background-color: #6ae09f;
+    border: 1px #e2e2e2 solid;
+    border-radius: 4px;
+}
+
+.loan-button_text {
+    color: #000000;
+    text-decoration: none;
+}
+
+.salary {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+}
+
+.salary_title {
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    justify-self: left;
+}
+
+.salary_balance {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+}
+
+.work-buttons {
+    display: flex;
+}
+
+.bank-button {
+    height: 3vh;
+    width: 5vw;
+    background-color: #fcf953;
+    border: 1px #e2e2e2 solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bank-button_text {
+    color: #000000;
+    text-decoration: none;
+}
+
+.work-button {
+    height: 3vh;
+    width: 5vw;
+    background-color: #5380fc;
+    border: 1px #e2e2e2 solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vw;
+}
+
+.work-button_text {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.laptops {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+}
+
+.laptops_title {
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    justify-self: left;
+    margin-bottom: 2vh;
+}
+
+input[name="computer"] {
+    border: 2px solid #d3d3d3;
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+ }
+
+.laptop_features {
+    display: flex;
+    flex-direction: column;
+}
+
+.laptop_features_paragraph {
+    margin-top: -1vh;
+}
+
+.laptop-description {
+    grid-row: 2;
+    grid-column: 1 / 4; 
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    max-width: 70vw;
+    min-height: 20vh;
+    place-self: center;
+    justify-items: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+img {
+    max-width: 15vw;
+}
+
+.description-title {
+    font-size: 2.5em;
+    margin-bottom: 5%;
+    margin-top: 0;
+}
+
+.laptop-description_main {
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+}
+
+.price {
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 20%;
+    text-transform: uppercase;
+}
+
+.buy-button {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    background-color: #87CEFA;
+    border: 1px #e2e2e2 solid;
+    border-radius: 4px;
+}
+
+.buy-button_text {
+    color: #000000;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
