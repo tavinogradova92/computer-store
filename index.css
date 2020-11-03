@@ -1,5 +1,5 @@
 :root{
-    font-size: 12px;
+    font-size: 13px;
 }
 
 body {
@@ -28,7 +28,7 @@ main {
     margin: 5vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .bank-account {
@@ -61,13 +61,18 @@ main {
     visibility: hidden;
 }
 
+.loan-button-container {
+    display: grid;
+    justify-content: center;
+}
+
 .loan-button {
     display: flex;
     justify-self: center;
     justify-content: center;
     align-items: center;
     height: 4vh;
-    width: 90%;
+    width: 8vw;
     background-color: #6ae09f;
     border: 1px #e2e2e2 solid;
     border-radius: 4px;
@@ -176,6 +181,7 @@ input::-webkit-calendar-picker-indicator {
     grid-template-columns: 1fr 2fr 1fr;
     max-width: 70vw;
     min-height: 20vh;
+    margin-top: 3vh;
     place-self: center;
     justify-items: center;
     align-items: center;
@@ -198,6 +204,11 @@ img {
     margin: 10%;
 }
 
+.price-container {
+    display: grid;
+    justify-items: center;
+}
+
 .price {
     font-size: 2em;
     font-weight: 500;
@@ -207,10 +218,10 @@ img {
 
 .buy-button {
     display: flex;
-    justify-self: center;
     justify-content: center;
     align-items: center;
     height: 4vh;
+    width: 80%;
     background-color: #87CEFA;
     border: 1px #e2e2e2 solid;
     border-radius: 4px;
