@@ -34,7 +34,6 @@ main {
 
 .bank-account {
     display: grid;
-    align-self: center;
     justify-self: center;
     width: 50%;
 }
@@ -44,12 +43,16 @@ main {
     font-weight: 600;
     display: flex;
     justify-self: left;
+    margin-bottom: 2vh;
+}
+
+.bank-account_status {
+    height: 10vh;
 }
 
 .bank-account_balance {
     display: flex;
     justify-content: space-between;
-    margin-top: 2vh;
 }
 
 .outstanding_loan {
@@ -64,7 +67,6 @@ main {
     justify-self: center;
     justify-content: center;
     align-items: center;
-    margin-top: 4vh;
     height: 4vh;
     width: 90%;
     background-color: #6ae09f;
@@ -79,7 +81,6 @@ main {
 
 .salary {
     display: grid;
-    align-self: center;
     justify-self: center;
 }
 
@@ -88,17 +89,18 @@ main {
     font-weight: 600;
     display: flex;
     justify-self: left;
+    margin-bottom: 2vh;
 }
 
 .salary_balance {
     display: flex;
     justify-content: space-between;
-    margin-top: 2vh;
-    margin-bottom: 8.5vh;
+    height: 10vh;
 }
 
 .work-buttons {
     display: flex;
+    height: 4vh;
 }
 
 .bank-button {
@@ -154,15 +156,12 @@ main {
 
 .laptops {
     display: grid;
-    align-self: center;
     justify-self: center;
 }
 
 .laptops_title {
     font-size: 2em;
     font-weight: 600;
-    display: flex;
-    justify-self: left;
     margin-bottom: 2vh;
 }
 
@@ -179,7 +178,7 @@ input::-webkit-calendar-picker-indicator {
     flex-direction: column;
 }
 
-.laptop_features_paragraph {
+.laptop_features_list {
     margin: 0;
     padding: 0;
     list-style: none;
