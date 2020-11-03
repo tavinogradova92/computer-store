@@ -15,7 +15,6 @@ nav {
     height: 14vh;
 }
 
-
 .navbar_title {
     display: flex;
     justify-content: left;
@@ -38,7 +37,7 @@ main {
     width: 50%;
 }
 
-.bank-account_title {
+.title {
     font-size: 2em;
     font-weight: 600;
     display: flex;
@@ -82,14 +81,6 @@ main {
 .salary {
     display: grid;
     justify-self: center;
-}
-
-.salary_title {
-    font-size: 2em;
-    font-weight: 600;
-    display: flex;
-    justify-self: left;
-    margin-bottom: 2vh;
 }
 
 .salary_balance {
@@ -146,7 +137,7 @@ main {
     align-items: center;
     justify-content: center;
     margin-left: 1vw;
-    visibility: hidden;
+    display: none;
 }
 
 .repay-button_text {
@@ -157,12 +148,6 @@ main {
 .laptops {
     display: grid;
     justify-self: center;
-}
-
-.laptops_title {
-    font-size: 2em;
-    font-weight: 600;
-    margin-bottom: 2vh;
 }
 
 input[name="computer"] {
