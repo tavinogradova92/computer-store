@@ -5,6 +5,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 nav {
@@ -35,6 +36,7 @@ main {
     display: grid;
     align-self: center;
     justify-self: center;
+    width: 50%;
 }
 
 .bank-account_title {
@@ -48,7 +50,13 @@ main {
     display: flex;
     justify-content: space-between;
     margin-top: 2vh;
-    margin-bottom: 4vh;
+}
+
+.outstanding_loan {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vh;
+    visibility: hidden;
 }
 
 .loan-button {
@@ -56,7 +64,8 @@ main {
     justify-self: center;
     justify-content: center;
     align-items: center;
-    height: 3vh;
+    margin-top: 4vh;
+    height: 4vh;
     width: 90%;
     background-color: #6ae09f;
     border: 1px #e2e2e2 solid;
@@ -85,7 +94,7 @@ main {
     display: flex;
     justify-content: space-between;
     margin-top: 2vh;
-    margin-bottom: 4vh;
+    margin-bottom: 8.5vh;
 }
 
 .work-buttons {
@@ -93,8 +102,8 @@ main {
 }
 
 .bank-button {
-    height: 3vh;
-    width: 5vw;
+    height: 4vh;
+    width: 6vw;
     background-color: #fcf953;
     border: 1px #e2e2e2 solid;
     border-radius: 4px;
@@ -109,8 +118,8 @@ main {
 }
 
 .work-button {
-    height: 3vh;
-    width: 5vw;
+    height: 4vh;
+    width: 6vw;
     background-color: #5380fc;
     border: 1px #e2e2e2 solid;
     border-radius: 4px;
@@ -122,6 +131,24 @@ main {
 
 .work-button_text {
     color: #ffffff;
+    text-decoration: none;
+}
+
+.repay-button {
+    height: 4vh;
+    width: 8vw;
+    background-color: #f5ca8b;
+    border: 1px #e2e2e2 solid;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1vw;
+    visibility: hidden;
+}
+
+.repay-button_text {
+    color: #000000;
     text-decoration: none;
 }
 
@@ -153,7 +180,9 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .laptop_features_paragraph {
-    margin-top: -1vh;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .laptop-description {
