@@ -28,7 +28,7 @@ main {
     margin: 5vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
 }
 
 .bank-account {
@@ -157,8 +157,8 @@ main {
 
 select[name="computer"] {
     border: 2px solid #d3d3d3;
-    margin-top: -4vh;
     margin-bottom: 2vh;
+    height: 5vh;
 }
 
 .laptop_features {
@@ -177,17 +177,20 @@ select[name="computer"] {
     grid-column: 1 / 4; 
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    max-width: 70vw;
-    min-height: 20vh;
-    margin-top: 3vh;
     place-self: center;
     justify-items: center;
     align-items: center;
     border-radius: 20px;
+    margin: 2% 10% 0 10%;
+}
+
+.photo-container {
+    display: grid;
+    justify-items: center;
 }
 
 img {
-    max-width: 15vw;
+    max-width: 70%;
 }
 
 #description-title {
@@ -219,7 +222,7 @@ img {
     justify-content: center;
     align-items: center;
     height: 4vh;
-    width: 80%;
+    width: 8vw;
     background-color: #87CEFA;
     border: 1px #e2e2e2 solid;
     border-radius: 4px;
