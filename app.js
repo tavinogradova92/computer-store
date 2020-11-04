@@ -1,5 +1,3 @@
-let computersArray = [];
-
 // creating a computer class as a function
 function Computer(index, model, photoLink, features, description, price, currency) {
         this.index = index;
@@ -12,6 +10,7 @@ function Computer(index, model, photoLink, features, description, price, currenc
 }
 
 // creating Computer as an array of objects
+let computersArray = [];
 function addComputer(index, model, photoLink, features, description, price, currency) {
     let c = new Computer(index, model, photoLink, features, description, price, currency); // creating new instance
     computersArray.push(c);
@@ -63,38 +62,51 @@ const computerSamsung = addComputer(
     "Samsung Notebook 9 Pro",
     "images/computerSamsung.jpg",
     "<li>Versatile inside & out</li><li>Unparalleled performance</li><li>15 Inch Screen</li>",
-    "The Notebook 9 Pro weighs in at 2.85lbs and is only 0.55” thick.  Rotate the full HD screen 360 degrees to use it in notebook mode or tablet mode.  With that kind of versatility, you can use this 2-in-1 device for work, home, travel, or even at the neighborhood park.",
+    "The Notebook 9 Pro weighs in at 2.85lbs and is only 0.55” thick.  Rotate the full HD screen 360 degrees to use it in notebook mode or tablet mode. With that kind of versatility, you can use this 2-in-1 device for work, home, travel, or even at the neighborhood park.",
     5000,
     "DKK"
 )
+
+//storing DOM manipulators as variables
+const computerList = document.getElementById('computers');
+const laptopFeatures = document.getElementById("laptop_features_list");
+const laptopPhoto = document.getElementById("computer-photo");
+const laptopModel = document.getElementById("description-title");
+const laptopDescription = document.getElementById("laptop-description");
+const laptopPrice = document.getElementById("laptop-price");
+const bankSumDiv = document.getElementById("bankSum");
+const loanSumDiv = document.getElementById("loanSum");
+const earnedSumDiv = document.getElementById("earnedSum");
+const outstandingLoan = document.getElementById("outstanding_loan");
+const repayButton = document.getElementById("repay-button");
 
 // adding datalyst options with JS variables
 let options = '';
 for (let i = 0; i < computersArray.length; i++) {
     options += '<option value="' + computersArray[i].model + '" />' + computersArray[i].model + '</option>'; // filling the select list
 }
-document.getElementById('computers').innerHTML = options;
+computerList.innerHTML = options;
 
 // setting the default computer description (HP)
-document.getElementById("laptop_features_list").innerHTML = computersArray[0].features;
-document.getElementById("computer-photo").src = computersArray[0].photoLink;
-document.getElementById("description-title").innerHTML = computersArray[0].model;
-document.getElementById("laptop-description").innerHTML = computersArray[0].description;
-document.getElementById("laptop-price").innerHTML = computersArray[0].price + ' ' + computersArray[0].currency;
+laptopFeatures.innerHTML = computersArray[0].features;
+laptopPhoto.src = computersArray[0].photoLink;
+laptopModel.innerHTML = computersArray[0].model;
+laptopDescription.innerHTML = computersArray[0].description;
+laptopPrice.innerHTML = computersArray[0].price + ' ' + computersArray[0].currency;
 
 
 // changing computer info depending on the form choice
 function changeComputerInfo() {
-    let selection = document.getElementById('computers');
+    let selection = computerList;
     let getIndexOfSelectedComputer = selection.getElementsByTagName("option")[selection.selectedIndex].index;
     // console.log(getIndexOfSelectedComputer);
     for (let i = 0; i < computersArray.length; i++) {
         if(getIndexOfSelectedComputer == computersArray[i].index) {
-            document.getElementById("laptop_features_list").innerHTML = computersArray[i].features;
-            document.getElementById("computer-photo").src = computersArray[i].photoLink;
-            document.getElementById("description-title").innerHTML = computersArray[i].model;
-            document.getElementById("laptop-description").innerHTML = computersArray[i].description;
-            document.getElementById("laptop-price").innerHTML = computersArray[i].price + ' ' + computersArray[i].currency;
+            laptopFeatures.innerHTML = computersArray[i].features;
+            laptopPhoto.src = computersArray[i].photoLink;
+            laptopModel.innerHTML = computersArray[i].model;
+            laptopDescription.innerHTML = computersArray[i].description;
+            laptopPrice.innerHTML = computersArray[i].price + ' ' + computersArray[i].currency;
         }
     }
 }
@@ -105,11 +117,11 @@ let loanSum = 0;
 let earnedSum = 0;
 
 // showing the initial values
-document.getElementById("bankSum").innerHTML = bankSum + " " + "DKK";
-document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
-document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
+bankSumDiv.innerHTML = bankSum + " " + "DKK";
+loanSumDiv.innerHTML = loanSum + " " + "DKK";
+earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
 if (loanSum == 0) {
-    document.getElementById("outstanding_loan").style.visibility = "hidden";
+    outstandingLoan.style.visibility = "hidden";
 }
 
 // get a loan button at work
@@ -118,9 +130,9 @@ function getALoan() {
         let promptSum = parseInt(prompt("Enter the amount of DKK you'd like to loan:", ""), 10);
         if((promptSum < (bankSum * 2)) && promptSum > 0) { // limiting prompt loan
             loanSum = promptSum;
-            document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
-            document.getElementById("outstanding_loan").style.visibility = "visible";
-            document.getElementById("repay-button").style.visibility = "visible";
+            loanSumDiv.innerHTML = loanSum + " " + "DKK";
+            outstandingLoan.style.visibility = "visible";
+            repayButton.style.visibility = "visible";
         } else if(promptSum == 0 || promptSum == null) {
             window.alert("The amount can't be null.");
         } else if(promptSum > (bankSum * 2)) {
@@ -136,7 +148,7 @@ function getALoan() {
 // work button that adds 100kr to work account clicked
 function workForFood() {
     earnedSum += 100;
-    document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
+    earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
 }
 
 // bank button transferring money to pay balance minus 10% to outstanding loan (if present)
@@ -145,14 +157,14 @@ function bankToBalance() {
         loanSum -= earnedSum * 0.1;
         bankSum += earnedSum * 0.9;
         earnedSum = 0;
-        document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
-        document.getElementById("bankSum").innerHTML = bankSum + " " + "DKK";
-        document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
+        loanSumDiv.innerHTML = loanSum + " " + "DKK";
+        bankSumDiv.innerHTML = bankSum + " " + "DKK";
+        earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
     } else if(loanSum == 0 && earnedSum !== 0) {
         bankSum += earnedSum;
         earnedSum = 0;
-        document.getElementById("bankSum").innerHTML = bankSum + " " + "DKK";
-        document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
+        bankSumDiv.innerHTML = bankSum + " " + "DKK";
+        earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
     } else if(earnedSum == 0) {
         window.alert("You haven't earned any money to transfer to your bank acount!");
     }
