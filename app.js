@@ -115,7 +115,7 @@ if (loanSum == 0) {
 // get a loan button at work
 function getALoan() {
     if(loanSum == 0) {
-        let promptSum = prompt("Enter the amount of DKK you'd like to loan:")
+        let promptSum = parseInt(prompt("Enter the amount of DKK you'd like to loan:", ""), 10);
         if((promptSum < (bankSum * 2)) && promptSum > 0) { // limiting prompt loan
             loanSum = promptSum;
             document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
@@ -123,8 +123,10 @@ function getALoan() {
             document.getElementById("repay-button").style.visibility = "visible";
         } else if(promptSum == 0 || promptSum == null) {
             window.alert("The amount can't be null.");
-        } else {
+        } else if(promptSum > (bankSum * 2)) {
             window.alert("The loan amount can't be more than double of your bank balance!");
+        } else {
+            window.alert("Please enter only numbers!");
         }
     } else {
         window.alert("You can't get a new loan until you have returned the previous one!");
