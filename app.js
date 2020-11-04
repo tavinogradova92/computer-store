@@ -112,14 +112,18 @@ if (loanSum == 0) {
     document.getElementById("outstanding_loan").style.visibility = "hidden";
 }
 
-// showing an outstanding loan in case of getting a loan
+// get a loan button at work
 function getALoan() {
     if(loanSum == 0) {
         let promptSum = prompt("Enter the amount of DKK you'd like to loan:")
-        loanSum = promptSum;
-        document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
-        document.getElementById("outstanding_loan").style.visibility = "visible";
-        document.getElementById("repay-button").style.visibility = "visible";
+        if(promptSum < (bankSum * 2)) {
+            loanSum = promptSum;
+            document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
+            document.getElementById("outstanding_loan").style.visibility = "visible";
+            document.getElementById("repay-button").style.visibility = "visible";
+        } else {
+            window.alert("The loan amount can't be more than double of your bank balance!");
+        }
     } else {
         window.alert("You can't get a new loan until you have returned the previous one!");
     }
