@@ -107,6 +107,7 @@ let earnedSum = 0;
 // showing the initial values
 document.getElementById("bankSum").innerHTML = bankSum + " " + "DKK";
 document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
+document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
 if (loanSum == 0) {
     document.getElementById("outstanding_loan").style.visibility = "hidden";
 }
@@ -117,6 +118,7 @@ function getALoan() {
         loanSum = 500;
         document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
         document.getElementById("outstanding_loan").style.visibility = "visible";
+        document.getElementById("repay-button").style.visibility = "visible";
     } else {
         window.alert("You can't get a new loan until you have returned the previous one!");
     }

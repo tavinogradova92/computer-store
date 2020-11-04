@@ -103,7 +103,7 @@ main {
     height: 4vh;
 }
 
-.bank-button {
+#bank-button {
     height: 4vh;
     width: 6vw;
     background-color: #fcf953;
@@ -119,7 +119,7 @@ main {
     text-decoration: none;
 }
 
-.work-button {
+#work-button {
     height: 4vh;
     width: 6vw;
     background-color: #5380fc;
@@ -136,7 +136,7 @@ main {
     text-decoration: none;
 }
 
-.repay-button {
+#repay-button {
     height: 4vh;
     width: 8vw;
     background-color: #f5ca8b;
@@ -146,7 +146,7 @@ main {
     align-items: center;
     justify-content: center;
     margin-left: 1vw;
-    display: none;
+    visibility: hidden;
 }
 
 .repay-button_text {
