@@ -75,7 +75,7 @@ for (let i = 0; i < computersArray.length; i++) {
 }
 document.getElementById('computers').innerHTML = options;
 
-// setting the default parameters (HP computer)
+// setting the default computer description (HP)
 document.getElementById("laptop_features_list").innerHTML = computersArray[0].features;
 document.getElementById("computer-photo").src = computersArray[0].photoLink;
 document.getElementById("description-title").innerHTML = computersArray[0].model;
@@ -92,9 +92,32 @@ function changeComputerInfo() {
         if(getIndexOfSelectedComputer == computersArray[i].index) {
             document.getElementById("laptop_features_list").innerHTML = computersArray[i].features;
             document.getElementById("computer-photo").src = computersArray[i].photoLink;
-document.getElementById("description-title").innerHTML = computersArray[i].model;
-document.getElementById("laptop-description").innerHTML = computersArray[i].description;
-document.getElementById("laptop-price").innerHTML = computersArray[i].price + ' ' + computersArray[i].currency;
+            document.getElementById("description-title").innerHTML = computersArray[i].model;
+            document.getElementById("laptop-description").innerHTML = computersArray[i].description;
+            document.getElementById("laptop-price").innerHTML = computersArray[i].price + ' ' + computersArray[i].currency;
         }
+    }
+}
+
+// initializing money variables
+let bankSum = 500;
+let loanSum = 0;
+let earnedSum = 0;
+
+// showing the initial values
+document.getElementById("bankSum").innerHTML = bankSum + " " + "DKK";
+document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
+if (loanSum == 0) {
+    document.getElementById("outstanding_loan").style.visibility = "hidden";
+}
+
+// showing an outstanding loan in case of getting a loan
+function getALoan() {
+    if(loanSum == 0) {
+        loanSum = 500;
+        document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
+        document.getElementById("outstanding_loan").style.visibility = "visible";
+    } else {
+        window.alert("You can't get a new loan until you have returned the previous one!");
     }
 }

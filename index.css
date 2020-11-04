@@ -54,7 +54,7 @@ main {
     justify-content: space-between;
 }
 
-.outstanding_loan {
+#outstanding_loan {
     display: flex;
     justify-content: space-between;
     margin-top: 2vh;
@@ -76,6 +76,10 @@ main {
     background-color: #6ae09f;
     border: 1px #e2e2e2 solid;
     border-radius: 4px;
+}
+
+.loan-button:hover {
+    cursor: pointer;
 }
 
 .loan-button_text {
@@ -181,7 +185,7 @@ select[name="computer"] {
     justify-items: center;
     align-items: center;
     border-radius: 20px;
-    margin: 2% 10% 0 10%;
+    margin: 0 10% 0 10%;
 }
 
 .photo-container {

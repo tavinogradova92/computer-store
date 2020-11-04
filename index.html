@@ -21,18 +21,18 @@
         <div class="bank-account_status">
             <div class="bank-account_balance">
                 <div>Balance</div>
-                <div>200 kr</div>
+                <div id="bankSum"></div>
             </div>
-            <div class="outstanding_loan">
+            <div id="outstanding_loan">
                 <div>Outstanding Loan</div>
-                <div>500 kr</div>
+                <div id="loanSum">500 kr</div>
             </div>
         </div>
         <div class="loan-button-container">
             <div class="loan-button">
                 <a 
                     class="loan-button_text" 
-                    href="" 
+                    onclick="getALoan()"
                     type="button" 
                     class="bank-account_action-button">
                         Get a loan
