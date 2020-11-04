@@ -142,7 +142,7 @@ function workForFood() {
 // bank button transferring money to pay balance minus 10% to outstanding loan (if present)
 function bankToBalance() {
     if(loanSum !== 0 && earnedSum !== 0) {
-        loanSum += earnedSum * 0.1;
+        loanSum -= earnedSum * 0.1;
         bankSum += earnedSum * 0.9;
         earnedSum = 0;
         document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
