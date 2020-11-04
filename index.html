@@ -63,15 +63,11 @@
 
     <div class="laptops">
         <div class="title">Laptops</div>
-        <form action="" method="get">
-            <input 
-                list="computers" 
-                name="computer" 
-                id="computer"
-                maxlength="50"
-                placeholder="Choose a laptop">
-            <datalist id="computers"></datalist>
-        </form>
+        <select 
+            id="computers"
+            name="computer"
+            onchange="changeComputerInfo()">
+        </select>
         <div class="laptop_features">
             <h3>Features</h3>
             <ul class="laptop_features_list">
