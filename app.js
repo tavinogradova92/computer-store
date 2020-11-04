@@ -115,7 +115,8 @@ if (loanSum == 0) {
 // showing an outstanding loan in case of getting a loan
 function getALoan() {
     if(loanSum == 0) {
-        loanSum = 500;
+        let promptSum = prompt("Enter the amount of DKK you'd like to loan:")
+        loanSum = promptSum;
         document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
         document.getElementById("outstanding_loan").style.visibility = "visible";
         document.getElementById("repay-button").style.visibility = "visible";
