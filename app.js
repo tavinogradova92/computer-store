@@ -136,3 +136,22 @@ function workForFood() {
     earnedSum += 100;
     document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
 }
+
+// bank button transferring money to pay balance minus 10% to outstanding loan (if present)
+function bankToBalance() {
+    if(loanSum !== 0 && earnedSum !== 0) {
+        loanSum += earnedSum * 0.1;
+        bankSum += earnedSum * 0.9;
+        earnedSum = 0;
+        document.getElementById("loanSum").innerHTML = loanSum + " " + "DKK";
+        document.getElementById("bankSum").innerHTML = bankSum + " " + "DKK";
+        document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
+    } else if(loanSum == 0 && earnedSum !== 0) {
+        bankSum += earnedSum;
+        earnedSum = 0;
+        document.getElementById("bankSum").innerHTML = bankSum + " " + "DKK";
+        document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
+    } else if(earnedSum == 0) {
+        window.alert("You haven't earned any money to transfer to your bank acount!");
+    }
+}

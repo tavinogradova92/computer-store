@@ -119,6 +119,10 @@ main {
     text-decoration: none;
 }
 
+#bank-button:hover {
+    cursor: pointer;
+}
+
 #work-button {
     height: 4vh;
     width: 6vw;
