@@ -123,3 +123,9 @@ function getALoan() {
         window.alert("You can't get a new loan until you have returned the previous one!");
     }
 }
+
+// work button that adds 100kr to work account clicked
+function workForFood() {
+    earnedSum += 100;
+    document.getElementById("earnedSum").innerHTML = earnedSum + " " + "DKK";
+}

@@ -136,6 +136,10 @@ main {
     text-decoration: none;
 }
 
+#work-button:hover {
+    cursor: pointer;
+}
+
 #repay-button {
     height: 4vh;
     width: 8vw;
