@@ -233,7 +233,7 @@ img {
     text-transform: uppercase;
 }
 
-.buy-button {
+#buy-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,4 +249,8 @@ img {
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+#buy-button:hover {
+    cursor: pointer;
 }

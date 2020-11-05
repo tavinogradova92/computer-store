@@ -30,7 +30,7 @@ laptopPrice.innerHTML = computersArray[0].price + ' ' + computersArray[0].curren
 function changeComputerInfo() {
     let selection = computerList;
     let getIndexOfSelectedComputer = selection.getElementsByTagName("option")[selection.selectedIndex].index;
-    // console.log(getIndexOfSelectedComputer);
+    
     for (let i = 0; i < computersArray.length; i++) {
         if(getIndexOfSelectedComputer == computersArray[i].index) {
             laptopFeatures.innerHTML = computersArray[i].features;
@@ -38,16 +38,6 @@ function changeComputerInfo() {
             laptopModel.innerHTML = computersArray[i].model;
             laptopDescription.innerHTML = computersArray[i].description;
             laptopPrice.innerHTML = computersArray[i].price + ' ' + computersArray[i].currency;
-
-            // // buy button to buy a computer
-            // function buyComputer() {
-            //     if((bankSum + loanSum) >= computersArray[i].price) {
-            //         if(confirm("Are you sure you would like to buy this computer for " + computersArray[i].price + " DKK?")) {
-
-            //             window.alert("You have successfully bought the computer!");
-            //         };
-            //     }
-            // }
         }
     }
 }
@@ -103,6 +93,10 @@ function bankToBalance() {
         loanSumDiv.innerHTML = loanSum + " " + "DKK";
         bankSumDiv.innerHTML = bankSum + " " + "DKK";
         earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
+        if(loanSum == 0) {
+            outstandingLoan.style.visibility = "hidden";
+            repayButton.style.visibility = "hidden";
+        }
     } else if(loanSum == 0 && earnedSum !== 0) {
         bankSum += earnedSum;
         earnedSum = 0;
@@ -120,15 +114,41 @@ function bankToLoan() {
         earnedSum = 0;
         loanSumDiv.innerHTML = loanSum + " " + "DKK";
         earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
+        if(loanSum == 0) {
+            outstandingLoan.style.visibility = "hidden";
+            repayButton.style.visibility = "hidden";
+        }
     } else if(loanSum > 0 && loanSum < earnedSum && earnedSum !== 0) {
         loanSum -= earnedSum;
         if(loanSum < 0) {
             earnedSum = (0 - loanSum);
             loanSum = 0;
+            outstandingLoan.style.visibility = "hidden";
+            repayButton.style.visibility = "hidden";
             loanSumDiv.innerHTML = loanSum + " " + "DKK";
             earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
         }
     } else if(earnedSum == 0) {
         window.alert("You haven't earned any money to pay for your loan!");
+    }
+}
+
+// buy button to buy a computer
+function buyComputer() {
+    let selection = computerList;
+    let getIndexOfSelectedComputer = selection.getElementsByTagName("option")[selection.selectedIndex].index;
+    
+    for (let i = 0; i < computersArray.length; i++) {
+        if(getIndexOfSelectedComputer == computersArray[i].index) {
+            if(bankSum >= computersArray[i].price) {
+                if(confirm("Are you sure you would like to buy this computer for " + computersArray[i].price + " DKK?")) {
+                    bankSum -= computersArray[i].price;
+                    bankSumDiv.innerHTML = bankSum + " " + "DKK";
+                    window.alert("You have successfully bought the computer!");
+                };
+            } else {
+                window.alert("You bareass do not have enough money to buy this laptop! Take a loan!");
+            } 
+        }
     }
 }
