@@ -100,3 +100,23 @@ function bankToBalance() {
         window.alert("You haven't earned any money to transfer to your bank acount!");
     }
 }
+
+// repay loan button transferring money to to outstanding loan
+function bankToLoan() {
+    if(loanSum !== 0 && earnedSum !== 0 && loanSum > earnedSum) {
+        loanSum -= earnedSum;
+        earnedSum = 0;
+        loanSumDiv.innerHTML = loanSum + " " + "DKK";
+        earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
+    } else if(loanSum > 0 && loanSum < earnedSum && earnedSum !== 0) {
+        loanSum -= earnedSum;
+        if(loanSum < 0) {
+            earnedSum = (0 - loanSum);
+            loanSum = 0;
+            loanSumDiv.innerHTML = loanSum + " " + "DKK";
+            earnedSumDiv.innerHTML = earnedSum + " " + "DKK";
+        }
+    } else if(earnedSum == 0) {
+        window.alert("You haven't earned any money to pay for your loan!");
+    }
+}

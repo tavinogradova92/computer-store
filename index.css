@@ -162,6 +162,10 @@ main {
     text-decoration: none;
 }
 
+#repay-button:hover {
+    cursor: pointer;
+}
+
 .laptops {
     display: grid;
     justify-self: center;
