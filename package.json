@@ -1,0 +1,20 @@
+{
+  "name": "computer-store",
+  "version": "1.0.0",
+  "description": "Computer Store project",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/tavinogradova92/computer-store.git"
+  },
+  "author": "Tanja Vinogradova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/tavinogradova92/computer-store/issues"
+  },
+  "homepage": "https://gitlab.com/tavinogradova92/computer-store#readme"
+}
