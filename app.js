@@ -38,6 +38,16 @@ function changeComputerInfo() {
             laptopModel.innerHTML = computersArray[i].model;
             laptopDescription.innerHTML = computersArray[i].description;
             laptopPrice.innerHTML = computersArray[i].price + ' ' + computersArray[i].currency;
+
+            // // buy button to buy a computer
+            // function buyComputer() {
+            //     if((bankSum + loanSum) >= computersArray[i].price) {
+            //         if(confirm("Are you sure you would like to buy this computer for " + computersArray[i].price + " DKK?")) {
+
+            //             window.alert("You have successfully bought the computer!");
+            //         };
+            //     }
+            // }
         }
     }
 }
@@ -61,6 +71,8 @@ function getALoan() {
         let promptSum = parseInt(prompt("Enter the amount of DKK you'd like to loan:", ""), 10);
         if((promptSum < (bankSum * 2)) && promptSum > 0) { // limiting prompt loan
             loanSum = promptSum;
+            bankSum += loanSum;
+            bankSumDiv.innerHTML = bankSum + " " + "DKK";
             loanSumDiv.innerHTML = loanSum + " " + "DKK";
             outstandingLoan.style.visibility = "visible";
             repayButton.style.visibility = "visible";
@@ -86,7 +98,7 @@ function workForFood() {
 function bankToBalance() {
     if(loanSum !== 0 && earnedSum !== 0) {
         loanSum -= earnedSum * 0.1;
-        bankSum += earnedSum * 0.9;
+        bankSum += (earnedSum - (earnedSum * 0.1));
         earnedSum = 0;
         loanSumDiv.innerHTML = loanSum + " " + "DKK";
         bankSumDiv.innerHTML = bankSum + " " + "DKK";
