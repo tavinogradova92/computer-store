@@ -1,6 +1,6 @@
 # This project is written with Vanilla JavaScript and custom created CSS (CSS Grid and Flexbox)
 
-## The logic of the projects is as follows:
+## The logic of the project is as follows:
 
 - The program consists of three parts: bank balance, work balance and laptops.
 
